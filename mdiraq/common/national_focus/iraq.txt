@@ -1,0 +1,131 @@
+focus_tree = {
+	id = iraq_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 20
+			tag = IRQ
+		}
+	}
+
+	continuous_focus_position = { x = 50 y = 800 }
+	default = no
+
+	#Iraq in the New Millenium
+	focus = {
+		id = iraq_new_millenium
+		icon = demand_territory
+
+		x = 10
+		y = 0
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_political_power = 150
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	#Address the Economic Crisis
+	focus = {
+		id = address_economic_crisis
+		icon = demand_territory
+
+		x = 5
+		y = 1
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_political_power = 75
+		}
+		prerequisite = {
+			focus = iraq_new_millenium
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Oil for Food
+	focus = {
+		id = oil_for_food
+		icon = demand_territory
+
+		x = 6
+		y = 2
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_resource= {
+				type = oil
+				amount = 2
+				state = 557
+				}
+			add_resource= {
+				type = oil
+				amount = 1
+				state = 171
+				}
+		}
+		prerequisite = {
+			focus = address_economic_crisis
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Domestic Matters
+	focus = {
+		id = domestic_matters
+		icon = demand_territory
+
+		x = 15
+		y = 1
+
+		cost = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_political_power = 150
+		}
+		prerequisite = {
+			focus = iraq_new_millenium
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
